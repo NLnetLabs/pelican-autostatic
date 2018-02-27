@@ -9,7 +9,10 @@ import re
 import shutil
 
 # For html escaping/unescaping
-import HTMLParser
+try:
+    import html.parser as HTMLParser  # py3
+except ImportError:
+    import HTMLParser  # py2
 try:
     from html import escape as html_escape  # py3
 except ImportError:
